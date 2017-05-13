@@ -8,6 +8,15 @@ public class FilmItem {
     private String posterAddress;
     private String link;
 
+    public FilmItem(String title, String posterAddress, String link) {
+        this.title = title;
+        this.posterAddress = posterAddress;
+        this.link = link;
+    }
+
+    public FilmItem() {
+    }
+
     public String getTitle() {
         return title;
     }

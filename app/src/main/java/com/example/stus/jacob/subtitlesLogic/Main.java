@@ -1,5 +1,6 @@
 package com.example.stus.jacob.subtitlesLogic;
 
+
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class Main {
 //        String filmName = sc.next();
         String filmName = "watchmen";
         Document page = Parser.getSearchResults(filmName);
-        ArrayList<FilmItem> items = Parser.getFilmItems(page, 5);
+        ArrayList<FilmItem> items = Parser.getFilmItems(page);
 
         for(FilmItem item : items)
             System.out.println(item);

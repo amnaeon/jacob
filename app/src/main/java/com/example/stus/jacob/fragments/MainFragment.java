@@ -23,7 +23,8 @@ public class MainFragment extends BaseFragment {
 
     @Override
     protected Initer getInit() {
-        return super.getInit().add(this::init);
+        return super.getInit()
+                .add(this::init);
     }
 
     private void init() {

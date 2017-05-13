@@ -27,11 +27,13 @@ public class ModeFragmentDialog extends DialogFragment {
             parent = inflater.inflate(R.layout.article_dialog, container, false);
             parent.findViewById(R.id.search).setOnClickListener(v -> {
                 UiManager.showWordSelectorFragment();
+                dismiss();
             });
         } else {
             parent = inflater.inflate(R.layout.subtitles_dialog, container, false);
             parent.findViewById(R.id.search).setOnClickListener(v -> {
                 UiManager.showSubtitlesFragment();
+                dismiss();
             });
         }
 

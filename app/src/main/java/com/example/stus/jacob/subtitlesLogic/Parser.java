@@ -35,27 +35,27 @@ public class Parser {
         return request.trim().replaceAll(" ", "+");
     }
 
-    public static ArrayList<FilmItem> getFilmItems(Document searchResultsPage, int itemsCount){
+    public static ArrayList<FilmItem> getFilmItems(Document searchResultsPage, int itemsCount) {
         Elements posterElements = searchResultsPage.select(POSTER_QUERY);
         Elements titleElements = searchResultsPage.select(TITLE_QUERY);
 
-        if(itemsCount < 0 || itemsCount > posterElements.size())
+        if (itemsCount < 0 || itemsCount > posterElements.size())
             itemsCount = posterElements.size();
 
         String[] posterAddressArr = new String[itemsCount];
 
-        for(int index = 0; index < itemsCount; index++){
+        for (int index = 0; index < itemsCount; index++) {
             Element element = posterElements.get(index);
             String imgTag = element.select("img").toString();
-            int beginIndex = imgTag.indexOf("src")+5;
-            int endIndex = imgTag.indexOf(".jpg")+4;
+            int beginIndex = imgTag.indexOf("src") + 5;
+            int endIndex = imgTag.indexOf(".jpg") + 4;
             posterAddressArr[index] = imgTag.substring(beginIndex, endIndex);
             index++;
         }
 
         ArrayList<FilmItem> items = new ArrayList<FilmItem>(itemsCount);
 
-        for(int index = 0; index < itemsCount; index++) {
+        for (int index = 0; index < itemsCount; index++) {
             Element element = titleElements.get(index).select("a").first();
             String title = element.text();
             String aTag = element.toString();
@@ -70,7 +70,7 @@ public class Parser {
         return items;
     }
 
-    public static ArrayList<FilmItem> getFilmItems(Document searchResultsPage){
+    public static ArrayList<FilmItem> getFilmItems(Document searchResultsPage) {
 //        if -1 then returns all items on the page
         return getFilmItems(searchResultsPage, -1);
     }
@@ -89,7 +89,7 @@ public class Parser {
             br = new BufferedReader(new InputStreamReader(is));
 
             while ((line = br.readLine()) != null) {
-                sb.append(line+"\n");
+                sb.append(line + "\n");
             }
         } catch (MalformedURLException mue) {
             mue.printStackTrace();
@@ -110,29 +110,29 @@ public class Parser {
         Document page = Jsoup.parse(new URL(address), 1000);
         Element element = page.select("td[data-title=Download]").first().select("a").first();
         String downloadAddress = element.toString();
-        int beginIndex = downloadAddress.indexOf("href")+6;
+        int beginIndex = downloadAddress.indexOf("href") + 6;
         int endIndex = downloadAddress.indexOf("\">");
         downloadAddress = downloadAddress.substring(beginIndex, endIndex);
         downloadAddress = CITE_URL + downloadAddress;
         downloadAddress = getHTMLCode(downloadAddress);
-        beginIndex = downloadAddress.indexOf("href")+6;
-        endIndex = downloadAddress.indexOf("zip")+3;
+        beginIndex = downloadAddress.indexOf("href") + 6;
+        endIndex = downloadAddress.indexOf("zip") + 3;
         downloadAddress = downloadAddress.substring(beginIndex, endIndex);
         return downloadAddress;
     }
 
-    public static InputStream getSubtitlesInputStream(String subtitlesAddress){
+    public static InputStream getSubtitlesInputStream(String subtitlesAddress) {
         URLConnection connection;
         try {
-            connection =  new URL(subtitlesAddress).openConnection();
+            connection = new URL(subtitlesAddress).openConnection();
             return connection.getInputStream();
-        }catch ( Exception ex ) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return null;
     }
 
-    public static String getSubtitlesString(FilmItem item){
+    public static String getSubtitlesString(FilmItem item) {
         try {
             String subtitlesAddress = Parser.getSubtitlesAddress(item);
             InputStream subtitlesInputStream = Parser.getSubtitlesInputStream(subtitlesAddress);
@@ -143,7 +143,7 @@ public class Parser {
         }
     }
 
-    private static String filterString(String str){
+    private static String filterString(String str) {
         return str.replaceAll("\\n", " ")
                 .replaceAll("\\d", "")
                 .replaceAll("[.,:?!-\"]", "")
@@ -151,25 +151,25 @@ public class Parser {
                 .replaceAll("\\[", "");
     }
 
-    public static String getSubtitlesString(InputStream inputZip){
+    public static String getSubtitlesString(InputStream inputZip) {
         StringBuilder sb = new StringBuilder();
-        try{
+        try {
             ZipInputStream zis = new ZipInputStream(inputZip);
             BufferedReader reader = new BufferedReader(new InputStreamReader(zis));
             ZipEntry ze;
 
-            for(ze = zis.getNextEntry(); ze != null; ze = zis.getNextEntry()){
+            for (ze = zis.getNextEntry(); ze != null; ze = zis.getNextEntry()) {
                 String fileName = ze.getName();
-                if(fileName.equals(GARBAGE_FILE))
+                if (fileName.equals(GARBAGE_FILE))
                     continue;
 
                 String str;
                 int counter = 2;
-                while((str = reader.readLine()) != null) {
-                    if(str.trim().equals("")) {
+                while ((str = reader.readLine()) != null) {
+                    if (str.trim().equals("")) {
                         counter = 3;
                     }
-                    if(counter > 0) {
+                    if (counter > 0) {
                         counter--;
                         continue;
                     }
@@ -182,7 +182,7 @@ public class Parser {
             zis.close();
             reader.close();
 
-        }catch(IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         String result = sb.toString();
