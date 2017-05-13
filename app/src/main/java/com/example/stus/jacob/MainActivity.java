@@ -11,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         UiManager.getInstance().init(this);
-        UiManager.showTempFragment();
+        UiManager.showMainFragment();
     }
 }

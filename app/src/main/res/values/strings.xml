@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">jacob</string>
+    <string name="title">Выбирете режим</string>
+    <string name="subtitles_text">Субтитры</string>
+    <string name="articles_text">Статьи</string>
+    <string name="subtitles_dialog_title">Введите название фильма(или ключевые слова из названия)</string>
+    <string name="articles_dialog_title">Введите url статьи </string>
+    <string name="search">Поиск </string>
+</resources>

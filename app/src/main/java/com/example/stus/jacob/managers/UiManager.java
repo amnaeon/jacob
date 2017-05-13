@@ -11,7 +11,9 @@ import android.view.MenuItem;
 import com.example.stus.jacob.MainActivity;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.fragments.BaseFragment;
-import com.example.stus.jacob.fragments.TempFragment;
+import com.example.stus.jacob.fragments.MainFragment;
+import com.example.stus.jacob.fragments.SubtitliesFragment;
+import com.example.stus.jacob.fragments.WordSelectorFragment;
 
 import java.util.Stack;
 
@@ -36,9 +38,9 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
     public void init(MainActivity parent) {
         this.parent = parent;
         parent.setContentView(R.layout.activity_main);
-
-        NavigationView navigationView = (NavigationView) parent.findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//
+//        NavigationView navigationView = (NavigationView) parent.findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
     }
 
 
@@ -118,7 +120,15 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
         backStack.peek().onActivityResult(requestCode, resultCode, data);
     }
 
-    public static void showTempFragment(){
-        getInstance().showFragment(TempFragment.getInstance());
+    public static void showMainFragment(){
+        getInstance().showFragment(MainFragment.getInstance());
+    }
+
+    public static void showWordSelectorFragment(){
+        getInstance().showFragment(WordSelectorFragment.getInstance());
+    }
+
+    public static void showSubtitlesFragment(){
+        getInstance().showFragment(SubtitliesFragment.getInstance());
     }
 }
