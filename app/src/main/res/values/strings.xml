@@ -6,4 +6,6 @@
     <string name="subtitles_dialog_title">Введите название фильма(или ключевые слова из названия)</string>
     <string name="articles_dialog_title">Введите url статьи </string>
     <string name="search">Поиск </string>
+    <string name="articleUrl">Введите url статьи:</string>
+    <string name="filmNameEnter">Введите название фильма:</string>
 </resources>
