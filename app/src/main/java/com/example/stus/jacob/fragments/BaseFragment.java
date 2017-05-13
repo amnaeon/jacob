@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.example.stus.jacob.IUiItemStatus;
+import com.example.stus.jacob.interfaces.IUiItemStatus;
 import com.example.stus.jacob.MainActivity;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.managers.UiManager;

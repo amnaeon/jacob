@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.example.stus.jacob.holders.SubtitlesHolder;
+import com.example.stus.jacob.interfaces.IOnTouch;
 import com.example.stus.jacob.subtitlesLogic.FilmItem;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 public class SubtitlesAdapter extends RecyclerView.Adapter<SubtitlesHolder> {
     private Context context;
     private List<FilmItem> filmItemList;
-
+    private IOnTouch iOnTouch;
     public SubtitlesAdapter(Context context) {
         this.context = context;
     }
@@ -29,6 +30,7 @@ public class SubtitlesAdapter extends RecyclerView.Adapter<SubtitlesHolder> {
     @Override
     public void onBindViewHolder(SubtitlesHolder holder, int position) {
         holder.update(filmItemList.get(position),context);
+
     }
 
     @Override
@@ -38,5 +40,9 @@ public class SubtitlesAdapter extends RecyclerView.Adapter<SubtitlesHolder> {
 
     public void setData(List<FilmItem> filmItemList){
         this.filmItemList = filmItemList;
+    }
+
+    public void setiOnTouch(IOnTouch iOnTouch) {
+        this.iOnTouch = iOnTouch;
     }
 }

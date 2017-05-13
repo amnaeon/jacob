@@ -12,6 +12,7 @@ import com.example.stus.jacob.MainActivity;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.fragments.BaseFragment;
 import com.example.stus.jacob.fragments.MainFragment;
+import com.example.stus.jacob.fragments.SubtitlesSendFragment;
 import com.example.stus.jacob.fragments.SubtitliesFragment;
 import com.example.stus.jacob.fragments.WordSelectorFragment;
 
@@ -130,5 +131,9 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
 
     public static void showSubtitlesFragment(){
         getInstance().showFragment(SubtitliesFragment.getInstance());
+    }
+
+    public static void showSubtitlesSendFragment(){
+        getInstance().showFragment(SubtitlesSendFragment.getInstance());
     }
 }

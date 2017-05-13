@@ -8,4 +8,5 @@
     <string name="search">Поиск </string>
     <string name="articleUrl">Введите url статьи:</string>
     <string name="filmNameEnter">Введите название фильма:</string>
+    <string name="sudtitles_send">Данные отправлены, в скором времени ожидайте пополнение в списке рекомендуемых слов</string>
 </resources>

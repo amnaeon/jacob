@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.stus.jacob.R;
+import com.example.stus.jacob.interfaces.IOnTouch;
 import com.example.stus.jacob.subtitlesLogic.FilmItem;
 import com.squareup.picasso.Picasso;
 
@@ -19,6 +20,7 @@ public class SubtitlesHolder extends RecyclerView.ViewHolder {
     private ImageView photo;
     private TextView name;
     private Context context;
+    private IOnTouch iOnTouch;
 
     public SubtitlesHolder(View itemView) {
         super(itemView);
@@ -34,5 +36,6 @@ public class SubtitlesHolder extends RecyclerView.ViewHolder {
     public void update(FilmItem filmItem,Context context) {
         Picasso.with(context).load(filmItem.getPosterAddress()).resize(150,150).centerCrop().into(photo);
         name.setText(filmItem.getTitle());
+        iOnTouch.onTouch(filmItem);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.stus.jacob;
+package com.example.stus.jacob.interfaces;
 
 /**
  * Created on 13.02.16.
