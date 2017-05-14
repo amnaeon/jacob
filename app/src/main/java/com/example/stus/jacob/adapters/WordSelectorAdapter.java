@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.stus.jacob.R;
-import com.example.stus.jacob.models.RecomendtionModel;
+import com.example.stus.jacob.models.RecomendationModel;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ import java.util.List;
 
 public class WordSelectorAdapter extends RecyclerView.Adapter<WordSelectorAdapter.ViewHolder> {
 
-    private List<RecomendtionModel> items;
+    private List<RecomendationModel> items;
     private Button saveButton;
 
-    public WordSelectorAdapter(List<RecomendtionModel> items) {
+    public WordSelectorAdapter(List<RecomendationModel> items) {
         this.items = items;
     }
 
@@ -41,8 +41,8 @@ public class WordSelectorAdapter extends RecyclerView.Adapter<WordSelectorAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        RecomendtionModel recomendtionModel = items.get(position);
-        holder.wordSelectorText.setText(recomendtionModel.word);
+        RecomendationModel recomendationModel = items.get(position);
+        holder.wordSelectorText.setText(recomendationModel.word);
         holder.layoutContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

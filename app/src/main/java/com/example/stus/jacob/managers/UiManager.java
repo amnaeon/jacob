@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.example.stus.jacob.MainActivity;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.fragments.BaseFragment;
+import com.example.stus.jacob.fragments.FourVariantsTestFragment;
 import com.example.stus.jacob.fragments.MainFragment;
 import com.example.stus.jacob.fragments.WordSendFragment;
 import com.example.stus.jacob.fragments.SubtitliesFragment;
@@ -140,5 +141,9 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
 
     public static void showTestFragment(){
         getInstance().showFragment(TestsFragment.getInstance());
+    }
+
+    public static void showFourVariantsTestFragment(){
+        getInstance().showFragment(FourVariantsTestFragment.getInstance());
     }
 }

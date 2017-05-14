@@ -1,6 +1,6 @@
 package com.example.stus.jacob.interfaces.restApiInterfaces;
 
-import com.example.stus.jacob.models.RecomendtionModel;
+import com.example.stus.jacob.models.RecomendationModel;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import retrofit2.http.Path;
 
 public interface ISendRecomendation {
     @POST("setRecomendation/{userID}/{wordIds}")
-    Call<List<RecomendtionModel>> sendRecomendation(
+    Call<List<RecomendationModel>> sendRecomendation(
             @Path("userID") int userID,
             @Path("wordIds") List<String> wordIds);
 

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.stus.jacob.Const;
 import com.example.stus.jacob.R;
+import com.example.stus.jacob.interfaces.restApiInterfaces.IAddText;
 import com.example.stus.jacob.managers.UiManager;
 
 import com.example.stus.jacob.models.requestModel.AddTextRequest;
@@ -47,13 +48,14 @@ public class ModeFragmentDialog extends DialogFragment {
                 if (search.getText().length() != 0
                         & URLUtil.isValidUrl(search.getText().toString())) {
                     makeQuery(search.getText().toString());
-                if (((TextView) parent.findViewById(R.id.articleUrl)).getText().length()!=0
-                        & URLUtil.isValidUrl(((TextView) parent.findViewById(R.id.articleUrl)).getText().toString())) {
-                    UiManager.showWordSendFragment();
-                    dismiss();
-                } else {
-                    Toast toast = Toast.makeText(getActivity(), "Невалидный URL", Toast.LENGTH_LONG);
-                    toast.show();
+                    if (((TextView) parent.findViewById(R.id.articleUrl)).getText().length() != 0
+                            & URLUtil.isValidUrl(((TextView) parent.findViewById(R.id.articleUrl)).getText().toString())) {
+                        UiManager.showWordSendFragment();
+                        dismiss();
+                    } else {
+                        Toast toast = Toast.makeText(getActivity(), "Невалидный URL", Toast.LENGTH_LONG);
+                        toast.show();
+                    }
                 }
             });
         } else {

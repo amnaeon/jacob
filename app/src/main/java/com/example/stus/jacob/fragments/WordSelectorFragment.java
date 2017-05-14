@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.adapters.WordSelectorAdapter;
-import com.example.stus.jacob.models.RecomendtionModel;
+import com.example.stus.jacob.models.RecomendationModel;
 import com.example.stus.jacob.models.SendRecomendationModel;
 
 import java.util.ArrayList;
@@ -36,9 +36,9 @@ public class WordSelectorFragment extends BaseFragment{
         wordSelectorList = (RecyclerView) root.findViewById(R.id.wordSelectorList);
         wordSelectorList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ArrayList<RecomendtionModel> list = new ArrayList<>();
+        ArrayList<RecomendationModel> list = new ArrayList<>();
         for(int i = 0; i < 15; i++) {
-            list.add(new RecomendtionModel(i, "word"+i));
+            list.add(new RecomendationModel(i, "word"+i));
         }
         WordSelectorAdapter adapter = new WordSelectorAdapter(list);
         adapter.setSaveButton(saveButton);
