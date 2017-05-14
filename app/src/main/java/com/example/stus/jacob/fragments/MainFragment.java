@@ -6,6 +6,7 @@ import android.widget.Button;
 import com.example.stus.jacob.Const;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.fragment_dialog.ModeFragmentDialog;
+import com.example.stus.jacob.managers.UiManager;
 
 /**
  * Created by stus on 13.05.17.
@@ -42,6 +43,10 @@ public class MainFragment extends BaseFragment {
             ModeFragmentDialog fragmentDialog = new ModeFragmentDialog();
             fragmentDialog.setArguments(arg);
             fragmentDialog.show(getActivity().getFragmentManager(),"dialog");
+        });
+
+        parent.findViewById(R.id.recomended).setOnClickListener(v->{
+
         });
     }
 }
