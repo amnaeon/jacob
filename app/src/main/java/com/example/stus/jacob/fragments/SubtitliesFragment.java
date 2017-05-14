@@ -43,7 +43,7 @@ public class SubtitliesFragment extends BaseFragment implements IOnTouch {
         RecyclerView list = (RecyclerView) parent.findViewById(R.id.subtitles_list);
         list.setLayoutManager(new LinearLayoutManager(getContext()));
         SubtitlesAdapter adapter = new SubtitlesAdapter(getContext());
-        adapter.setData(Arrays.asList(new FilmItem("dfdfdf", url, "sdsdsd")
+        adapter.setData(Arrays.asList(new FilmItem("Scream of soul and something else", url, "sdsdsd")
                 , new FilmItem("eeeeee", url, "rrrrrrr"), new FilmItem("dddede", url, "eeeeeeeee")));
         adapter.setiOnTouch(this);
         list.setAdapter(adapter);
