@@ -8,8 +8,11 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.URLUtil;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.stus.jacob.Const;
 import com.example.stus.jacob.R;
@@ -26,14 +29,25 @@ public class ModeFragmentDialog extends DialogFragment {
         if (arg.getInt("type") == Const.ARTICLE_TYPE) {
             parent = inflater.inflate(R.layout.article_dialog, container, false);
             parent.findViewById(R.id.search).setOnClickListener(v -> {
-                UiManager.showWordSelectorFragment();
-                dismiss();
+                if (((TextView) parent.findViewById(R.id.articleUrl)).getText().length()!=0
+                        & URLUtil.isValidUrl(((TextView) parent.findViewById(R.id.articleUrl)).getText().toString())) {
+                    UiManager.showWordSelectorFragment();
+                    dismiss();
+                } else {
+                    Toast toast = Toast.makeText(getActivity(), "Невалидный URL", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             });
         } else {
             parent = inflater.inflate(R.layout.subtitles_dialog, container, false);
             parent.findViewById(R.id.search).setOnClickListener(v -> {
-                UiManager.showSubtitlesFragment();
-                dismiss();
+                if (((TextView) parent.findViewById(R.id.filmName)).getText().length() != 0) {
+                    UiManager.showSubtitlesFragment();
+                    dismiss();
+                } else {
+                    Toast toast = Toast.makeText(getActivity(), "Введите название фильма", Toast.LENGTH_LONG);
+                    toast.show();
+                }
             });
         }
 
