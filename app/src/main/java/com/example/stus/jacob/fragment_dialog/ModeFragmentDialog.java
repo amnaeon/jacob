@@ -31,7 +31,7 @@ public class ModeFragmentDialog extends DialogFragment {
             parent.findViewById(R.id.search).setOnClickListener(v -> {
                 if (((TextView) parent.findViewById(R.id.articleUrl)).getText().length()!=0
                         & URLUtil.isValidUrl(((TextView) parent.findViewById(R.id.articleUrl)).getText().toString())) {
-                    UiManager.showWordSelectorFragment();
+                    UiManager.showWordSendFragment();
                     dismiss();
                 } else {
                     Toast toast = Toast.makeText(getActivity(), "Невалидный URL", Toast.LENGTH_LONG);

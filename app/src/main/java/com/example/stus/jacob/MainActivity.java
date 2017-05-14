@@ -26,4 +26,9 @@ public class MainActivity extends AppCompatActivity {
         }
         UiManager.showMainFragment();
     }
+
+    @Override
+    public void onBackPressed() {
+        UiManager.getInstance().back();
+    }
 }
