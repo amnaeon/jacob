@@ -10,5 +10,12 @@ public class Const {
 
     public class USER_CONST{
         public static final String USER_ID = "USER_ID";
+        public static final String CHAT_ID = "CHAT_ID";
+        public static final String USER_NAME = "USER_NAME";
+    }
+
+    public class BundleConst{
+        public static final String SUBTITLE_URL = "subtitle_url";
+        public static final String ARTICLE_URL = "article_url";
     }
 }

@@ -12,8 +12,9 @@ import com.example.stus.jacob.MainActivity;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.fragments.BaseFragment;
 import com.example.stus.jacob.fragments.MainFragment;
-import com.example.stus.jacob.fragments.SubtitlesSendFragment;
+import com.example.stus.jacob.fragments.WordSendFragment;
 import com.example.stus.jacob.fragments.SubtitliesFragment;
+import com.example.stus.jacob.fragments.TestsFragment;
 import com.example.stus.jacob.fragments.WordSelectorFragment;
 
 import java.util.Stack;
@@ -129,11 +130,15 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
         getInstance().showFragment(WordSelectorFragment.getInstance());
     }
 
-    public static void showSubtitlesFragment(){
-        getInstance().showFragment(SubtitliesFragment.getInstance());
+    public static void showSubtitlesFragment(String url){
+        getInstance().showFragment(SubtitliesFragment.getInstance(url));
     }
 
-    public static void showSubtitlesSendFragment(){
-        getInstance().showFragment(SubtitlesSendFragment.getInstance());
+    public static void showWordSendFragment(){
+        getInstance().showFragment(WordSendFragment.getInstance());
+    }
+
+    public static void showTestFragment(){
+        getInstance().showFragment(TestsFragment.getInstance());
     }
 }

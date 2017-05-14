@@ -46,7 +46,11 @@ public class MainFragment extends BaseFragment {
         });
 
         parent.findViewById(R.id.recomended).setOnClickListener(v->{
+            UiManager.showWordSelectorFragment();
+        });
 
+        parent.findViewById(R.id.test).setOnClickListener(v->{
+            UiManager.showTestFragment();
         });
     }
 }

@@ -14,10 +14,11 @@ import retrofit2.http.Path;
  * Created by stus on 14.05.17.
  */
 
-public interface IGetRecomendation {
-    @POST("addUser/{userID}")
-    Call<String> getRecomendation(
-            @Path("userID") int userID);
+public interface ISendRecomendation {
+    @POST("setRecomendation/{userID}/{wordIds}")
+    Call<List<RecomendtionModel>> sendRecomendation(
+            @Path("userID") int userID,
+            @Path("wordIds") List<String> wordIds);
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://jacob-bot.herokuapp.com:80/")
