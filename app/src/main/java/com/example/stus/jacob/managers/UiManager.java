@@ -17,7 +17,9 @@ import com.example.stus.jacob.fragments.WordSendFragment;
 import com.example.stus.jacob.fragments.SubtitliesFragment;
 import com.example.stus.jacob.fragments.TestsFragment;
 import com.example.stus.jacob.fragments.WordSelectorFragment;
+import com.example.stus.jacob.models.WordModel;
 
+import java.util.List;
 import java.util.Stack;
 
 
@@ -143,7 +145,7 @@ public class UiManager implements NavigationView.OnNavigationItemSelectedListene
         getInstance().showFragment(TestsFragment.getInstance());
     }
 
-    public static void showFourVariantsTestFragment(){
-        getInstance().showFragment(FourVariantsTestFragment.getInstance());
+    public static void showFourVariantsTestFragment(List<WordModel> words){
+        getInstance().showFragment(FourVariantsTestFragment.getInstance(words));
     }
 }

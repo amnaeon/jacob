@@ -26,7 +26,7 @@ public class TestsFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(viewID(), container, false);
 
-        ArrayList<WordModel> word = initWords();
+        ArrayList<WordModel> words = initWords();
 
         fourVariantsTestBtn = (Button) root.findViewById(R.id.fourVariantsTestBtn);
         relationTestBtn = (Button) root.findViewById(R.id.relationTestBtn);
@@ -37,7 +37,7 @@ public class TestsFragment extends BaseFragment {
         fourVariantsTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UiManager.showFourVariantsTestFragment();
+                UiManager.showFourVariantsTestFragment(words);
             }
         });
         return root;

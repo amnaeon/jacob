@@ -10,12 +10,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.stus.jacob.R;
+import com.example.stus.jacob.models.WordModel;
+
+import java.util.List;
 
 /**
  * Created by root on 14.05.17.
  */
 
 public class FourVariantsTestFragment extends BaseFragment {
+    public List<WordModel> words;
     public TextView answerWord;
     public Button oneBtn, twoBtn, threeBtn, fourBtn;
 
@@ -37,7 +41,9 @@ public class FourVariantsTestFragment extends BaseFragment {
         return R.layout.four_variants_test_fragment;
     }
 
-    public static FourVariantsTestFragment getInstance() {
+    public static FourVariantsTestFragment getInstance(List<WordModel> words) {
+        FourVariantsTestFragment fourVariantsTestFragment = new FourVariantsTestFragment();
+        fourVariantsTestFragment.words = words;
         return new FourVariantsTestFragment();
     }
 }
