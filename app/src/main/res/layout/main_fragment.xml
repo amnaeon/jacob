@@ -15,7 +15,7 @@
 
     <ImageView
         android:id="@+id/subtitlels"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
@@ -28,7 +28,7 @@
 
     <ImageView
         android:id="@+id/articles"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/state"
@@ -49,12 +49,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/test"
         android:layout_alignTop="@+id/subtitlels"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:background="?android:attr/selectableItemBackground"
         app:srcCompat="@drawable/ic_local_activity_black_48dp" />
 
     <ImageView
         android:id="@+id/test"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/test"
