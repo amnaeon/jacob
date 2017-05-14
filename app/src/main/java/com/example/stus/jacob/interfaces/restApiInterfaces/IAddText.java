@@ -19,7 +19,7 @@ public interface IAddText {
             @Path("userName") String userName);
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://localhost:9000/")
+            .baseUrl("https://jacob-bot.herokuapp.com:37801/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 }

@@ -1,5 +1,9 @@
 package com.example.stus.jacob.interfaces.restApiInterfaces;
 
+import com.example.stus.jacob.models.RecomendtionModel;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -12,11 +16,11 @@ import retrofit2.http.Path;
 
 public interface IGetRecomendation {
     @POST("addUser/{userID}")
-    Call<String> addText(
-            @Path("userID") String userID);
+    Call<List<RecomendtionModel>> getRecomendation(
+            @Path("userID") int userID);
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://localhost:9000/")
+            .baseUrl("https://jacob-bot.herokuapp.com:37801/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 }

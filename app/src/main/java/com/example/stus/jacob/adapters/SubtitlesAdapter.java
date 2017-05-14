@@ -30,7 +30,7 @@ public class SubtitlesAdapter extends RecyclerView.Adapter<SubtitlesHolder> {
     @Override
     public void onBindViewHolder(SubtitlesHolder holder, int position) {
         holder.update(filmItemList.get(position),context);
-
+        holder.setiOnTouch(iOnTouch);
     }
 
     @Override

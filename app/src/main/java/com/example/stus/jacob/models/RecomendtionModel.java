@@ -5,6 +5,6 @@ package com.example.stus.jacob.models;
  */
 
 public class RecomendtionModel {
-    public String id = "";
+    public int id = 0;
     public String word = "";
 }

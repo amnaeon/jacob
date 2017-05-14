@@ -36,6 +36,13 @@ public class SubtitlesHolder extends RecyclerView.ViewHolder {
     public void update(FilmItem filmItem,Context context) {
         Picasso.with(context).load(filmItem.getPosterAddress()).resize(150,150).centerCrop().into(photo);
         name.setText(filmItem.getTitle());
-        iOnTouch.onTouch(filmItem);
+        itemView.setOnClickListener(v->{
+
+            iOnTouch.onTouch(filmItem);
+        });
+    }
+
+    public void setiOnTouch(IOnTouch iOnTouch) {
+        this.iOnTouch = iOnTouch;
     }
 }

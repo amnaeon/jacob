@@ -6,11 +6,18 @@ import android.support.v7.widget.RecyclerView;
 import com.example.stus.jacob.R;
 import com.example.stus.jacob.adapters.SubtitlesAdapter;
 import com.example.stus.jacob.interfaces.IOnTouch;
+import com.example.stus.jacob.interfaces.restApiInterfaces.IGetRecomendation;
 import com.example.stus.jacob.managers.UiManager;
+import com.example.stus.jacob.models.RecomendtionModel;
 import com.example.stus.jacob.subtitlesLogic.FilmItem;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by stus on 13.05.17.
@@ -46,7 +53,21 @@ public class SubtitliesFragment extends BaseFragment implements IOnTouch {
     @Override
     public void onTouch(FilmItem filmItem) {
         //// TODO: 14.05.17 adding request
-        UiManager.showSubtitlesSendFragment();
+        IGetRecomendation recomendation = IGetRecomendation.retrofit.create(IGetRecomendation.class);
+        Call<List<RecomendtionModel>> call = recomendation.getRecomendation(158074167);
+        call.enqueue(new Callback<List<RecomendtionModel>>() {
+            @Override
+            public void onResponse(Call<List<RecomendtionModel>> call, Response<List<RecomendtionModel>> response) {
+                UiManager.showSubtitlesSendFragment();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<RecomendtionModel>> call, Throwable t) {
+
+            }
+
+        });
     }
 }
 
