@@ -8,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.stus.jacob.R;
+import com.example.stus.jacob.managers.UiManager;
+import com.example.stus.jacob.models.WordModel;
+
+import java.util.ArrayList;
 
 /**
  * Created by stus on 14.05.17.
@@ -21,6 +25,9 @@ public class TestsFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(viewID(), container, false);
+
+        ArrayList<WordModel> word = initWords();
+
         fourVariantsTestBtn = (Button) root.findViewById(R.id.fourVariantsTestBtn);
         relationTestBtn = (Button) root.findViewById(R.id.relationTestBtn);
         writingTestBtn = (Button) root.findViewById(R.id.writingTestBtn);
@@ -30,10 +37,18 @@ public class TestsFragment extends BaseFragment {
         fourVariantsTestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UiManager.showFourVariantsTestFragment();
             }
         });
         return root;
+    }
+
+    private ArrayList<WordModel> initWords() {
+        ArrayList<WordModel> words = new ArrayList<>();
+        for(int i = 0; i < 50; i++) {
+            words.add(new WordModel(""+i, "word"+i, "перевод"+i));
+        }
+        return null;
     }
 
     @Override
