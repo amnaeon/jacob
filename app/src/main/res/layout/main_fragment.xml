@@ -16,20 +16,42 @@
         android:id="@+id/subtitlels"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="49dp"
         app:srcCompat="@drawable/subtitres"
         android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:id="@+id/articles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/state"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/subtitlels"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/subtitlels"
-        android:layout_alignEnd="@+id/subtitlels"
-        android:layout_alignLeft="@+id/subtitlels"
-        android:layout_alignStart="@+id/subtitlels" />
+        android:layout_alignEnd="@+id/subtitlels" />
+
+    <ImageButton
+        android:id="@+id/recomended"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/recomended"
+        android:layout_alignBottom="@+id/subtitlels"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/test"
+        android:layout_alignTop="@+id/articles"
+        android:layout_alignLeft="@+id/recomended"
+        android:layout_alignStart="@+id/recomended"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
