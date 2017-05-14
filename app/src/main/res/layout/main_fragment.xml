@@ -50,8 +50,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/subtitlels"
-        android:layout_toRightOf="@+id/title"
-        android:layout_toEndOf="@+id/title" />
+        android:layout_toEndOf="@+id/title"
+        android:layout_alignLeft="@+id/test"
+        android:layout_alignStart="@+id/test" />
 
     <ImageButton
         android:id="@+id/test"
@@ -60,8 +61,6 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/test"
         android:layout_alignTop="@+id/articles"
-        android:layout_alignLeft="@+id/recomended"
-        android:layout_alignStart="@+id/recomended"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
