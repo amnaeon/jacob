@@ -46,7 +46,7 @@ public class WordSelectorFragment extends BaseFragment{
 
         layouContainer = (LinearLayout) root.findViewById(R.id.layoutContainer);
         return root;
-    }
+    }//
 
     @Override
     protected int viewID() {
